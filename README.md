@@ -2,7 +2,7 @@
 
 ## Crear una tienda usando React.js
 
-### Desafio1: Crear la APP utilizando el CLI
+### [Desafio1: Crear la APP utilizando el CLI](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-01)
 
 **Consigna:**
 
@@ -12,10 +12,6 @@
 
 > - Link al repositorio de github
 > - Dentro del repositorio, deberían encontrarse las carpetas y los archivos src, README.md y package.json, entre otros
-
-**Link branch:**
-
-> https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-01
 
 ---
 
