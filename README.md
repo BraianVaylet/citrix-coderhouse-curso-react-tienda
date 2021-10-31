@@ -2,11 +2,19 @@
 
 ## Crear una tienda usando React.js
 
-> ### **NOTAS**
+### **GIT: Branch o Ramas**
 
 - El proyecto cuenta con una branch **master** donde se encuentra la versión productiva de la tienda y esta deployada en [vercel](https://vercel.com/) baja esta [url](https://citrix-coderhouse-store-lirrgy2az-braianvaylet.vercel.app/)
 - El proyecto cuenta con una branch **dev** donde se encuentran los últimos cambios realizados en el proyecto.
 - El proyecto cuenta con una branch por cada desafío realizado que cuenta con el código necesario para cumplir con los requisitos del mismo.
+
+### **LIBRERÍAS (opcionales)**
+ 
+- [grommet](https://v2.grommet.io/): Librería UI de componentes
+- [grommet-icons](https://icons.grommet.io/?): Librería de Iconos
+- [eslint](https://eslint.org/) y [eslint-config-xo](https://github.com/xojs/xo): Linter del proyecto
+- [husky](https://typicode.github.io/husky/#/) y [lint-staged](https://github.com/okonet/lint-staged): Librerías para ejecutar acciones antes de un commit
+- [prop-types](https://www.npmjs.com/package/prop-types): Librería para el tipado de las props de los componentes
 
 ---
 
@@ -61,3 +69,29 @@ Crea una carpeta dentro de src llamada components que contenga a NavBar.js para 
 - Se crea el fichero /components y dentro el componente Navbar.
 - Se crea el fichero /assets y dentro /images donde se guardan las imágenes del proyecto.
 - Se crea el fichero /utils donde se colocan archivos de utilería.
+
+---
+
+### [Desafio3: Crea tu landing](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-03)
+
+**Consigna:**
+
+- Crea un componente CartWidget.js con un ícono, y ubícalo en el navbar. Agrega algunos estilos con bootstrap/materialize u otro.
+- Crea un componente contenedor ItemListContainer.js con una prop greeting, y muestra el mensaje dentro del contenedor con el styling integrado.
+
+**Aspectos a incluir en el entregable:**
+
+- Parte 1: crea un componente CartWidget.js que haga rendering de un ícono Cart, e inclúyelo dentro de NavBar.js para que esté visible en todo momento.
+- Parte 2: crea un componente ItemListContainer. Impórtalo dentro de App.js, y abajo de NavBar.js. 
+
+**Material de referencia:**
+
+[Clase 3](https://docs.google.com/presentation/d/1JXz_rrZxhcL1Rw2fdH_X2ay6lQEHerRY6KF_cNoqxGo/edit#slide=id.ga90c0f760b_0_12): COMPONENTES I
+
+**Resumen:**
+
+- Se crea el componente CartWidget y se importa en el componente Navbar
+- Se crea el componente ItemListContainer y se importa en el componente App, se pasa un mensaje por props
+- Se instala la libreria [PropTypes](https://www.npmjs.com/package/prop-types) para manejar el tipado de las props del proyecto.
+
+---

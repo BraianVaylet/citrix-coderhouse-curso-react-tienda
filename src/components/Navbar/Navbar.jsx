@@ -3,9 +3,10 @@ import {Anchor, Box, Header, Image, Nav, Text} from 'grommet';
 import {LOGOS} from 'utils/images';
 import {items} from './Navbar.mock';
 import styles from './NavbarStyles.module.css';
+import CartWidget from 'components/CartWidget/CartWidget';
 
 const Navbar = () => (
-	<Header pad="small">
+	<Header pad="medium">
 		<Box direction="row" align="center" gap="small">
 			<Box height="xxsmall" width="xxsmall">
 				<Image
@@ -31,6 +32,7 @@ const Navbar = () => (
 					</Box>
 				} />
 			))}
+			<CartWidget />
 		</Nav>
 	</Header>
 );
