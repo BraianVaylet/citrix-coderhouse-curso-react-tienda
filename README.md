@@ -86,7 +86,11 @@ Crea una carpeta dentro de src llamada components que contenga a NavBar.js para 
 
 **Material de referencia:**
 
+<<<<<<< HEAD
 [Clase 3](https://docs.google.com/presentation/d/1JXz_rrZxhcL1Rw2fdH_X2ay6lQEHerRY6KF_cNoqxGo/edit#slide=id.ga90c0f760b_0_12): COMPONENTES I
+=======
+[Clase 4](https://docs.google.com/presentation/d/1JXz_rrZxhcL1Rw2fdH_X2ay6lQEHerRY6KF_cNoqxGo/edit#slide=id.ga90c0f760b_0_0): COMPONENTES I
+>>>>>>> dev
 
 **Resumen:**
 
@@ -95,3 +99,32 @@ Crea una carpeta dentro de src llamada components que contenga a NavBar.js para 
 - Se instala la libreria [PropTypes](https://www.npmjs.com/package/prop-types) para manejar el tipado de las props del proyecto.
 
 ---
+
+### [Desafio4: Contador con botón](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-04)
+
+**Consigna:**
+
+- Crea un componente ItemCount.js, que debe estar compuesto de un botón y controles, para incrementar y decrementar la cantidad requerida de ítems.
+
+**Aspectos a incluir en el entregable:**
+
+- Componente ItemCount.js con los respectivos controles de la consigna.
+
+**A tener en cuenta:**
+
+- El número contador nunca puede superar el stock disponible
+- De no haber stock el click no debe tener efecto y por ende no ejecutar el callback onAdd
+- Si hay stock al clickear el botón se debe ejecutar onAdd con un número que debe ser la cantidad seleccionada por el usuario.
+
+**Detalle importante:**
+Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es parte de él, así que por el momento puedes probar e importar este componente dentro del ItemListContainer, sólo a propósitos de prueba. Después lo sacaremos de aquí y lo incluiremos en el detalle del ítem.
+
+**Material de referencia:**
+
+[Clase 5](https://docs.google.com/presentation/d/1FIwS8bJS0DuenG0aDcwcuNdQ4mm1zlDPyYoKPqNXqFc/edit#slide=id.ga9120ea362_0_0): COMPONENTES II
+
+**Resumen:**
+
+- Se crea el componente ItemCount
+- Se importa el componente ItemCount en ItemListContainer y se le pasan las props: stock y onAdd
+- Se utiliza dos veces con diferentes valores de stock para corroborar la independencia de ambos componentes.
