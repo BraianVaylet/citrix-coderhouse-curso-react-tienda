@@ -86,11 +86,7 @@ Crea una carpeta dentro de src llamada components que contenga a NavBar.js para 
 
 **Material de referencia:**
 
-<<<<<<< HEAD
-[Clase 3](https://docs.google.com/presentation/d/1JXz_rrZxhcL1Rw2fdH_X2ay6lQEHerRY6KF_cNoqxGo/edit#slide=id.ga90c0f760b_0_12): COMPONENTES I
-=======
 [Clase 4](https://docs.google.com/presentation/d/1JXz_rrZxhcL1Rw2fdH_X2ay6lQEHerRY6KF_cNoqxGo/edit#slide=id.ga90c0f760b_0_0): COMPONENTES I
->>>>>>> dev
 
 **Resumen:**
 
