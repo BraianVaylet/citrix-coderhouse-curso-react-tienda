@@ -6,16 +6,22 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "grommet": "^2.18.0",
+    "grommet-icons": "^4.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "husky:init": "husky install",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "yarn lint --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +39,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-xo": "^0.39.0",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2"
+  },
+  "lint-staged": {
+    "src/*.{js, jsx}": [
+      "eslint --cache --fix"
     ]
   }
 }
