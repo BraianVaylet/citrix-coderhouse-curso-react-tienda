@@ -124,3 +124,33 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se crea el componente ItemCount
 - Se importa el componente ItemCount en ItemListContainer y se le pasan las props: stock y onAdd
 - Se utiliza dos veces con diferentes valores de stock para corroborar la independencia de ambos componentes.
+
+---
+
+### [Desafío5: Catálogo con MAPS y Promises](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-05)
+
+**Consigna:**
+
+- Crea los componentes Item.js e ItemList.js para mostrar algunos productos en tu ItemListContainer.js. Los ítems deben provenir de un llamado a una promise que los resuelva en tiempo diferido (setTimeout) de 2 segundos, para emular retrasos de red
+
+**Aspectos a incluir en el entregable:**
+
+- Item.js: Es un componente destinado a mostrar información breve del producto que el user clickeará luego para acceder a los detalles (los desarrollaremos más adelante)
+- ItemList.js Es un agrupador de un set de componentes Item.js (Deberías incluirlo dentro de ItemListContainer del desafío 3)
+- Implementa un async mock (promise): Usa un efecto de montaje para poder emitir un llamado asincrónico a un mock (objeto) estático de datos que devuelva un conjunto de item { id, title, description, price, pictureUrl } en dos segundos (setTimeout), para emular retrasos de red.
+
+**Material de referencia:**
+
+[Clase 6](https://docs.google.com/presentation/d/1DiozrjZU_VBCLaGjPc3RUTQraGsFD9fyJzZCzqPEB2o/edit#slide=id.ga90e52debd_0_0): PROMISES, ASINCRONÍA Y MAP
+
+**Resumen:**
+
+- Se agrega el favicon de Citrix
+- Se agrega un enfoque de token para el precio de los productos 😋
+- Se crea el componente Item y el componente ItemList
+- Se crea el fichero /mocks con el archivo data donde se encuentra el listado de productos.
+- Se movieron las imágenes de los productos al fichero /mocks (las imágenes van a estar en la firebase al finalizar el desarrollo)
+- Se importa el componente Item dentro del componente ItemList
+- Se importa el componente ItemList dentro del componente ItemListContainer
+- Se simula la carga de los productos del mock utilizando promesas en el componente ItemListContainer.
+- Se comprimien las imágenes usando [tinypng](https://tinypng.com/)
