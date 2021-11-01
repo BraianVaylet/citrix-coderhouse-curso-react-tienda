@@ -154,3 +154,41 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se importa el componente ItemList dentro del componente ItemListContainer
 - Se simula la carga de los productos del mock utilizando promesas en el componente ItemListContainer.
 - Se comprimien las imágenes usando [tinypng](https://tinypng.com/)
+
+---
+
+### [Desafío6: Detalle del producto](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-06)
+
+#### **PUNTO 1**
+
+**Consigna:**
+
+- Crea tu componente ItemDetailContainer, con la misma premisa que ItemListContainer.
+
+**Aspectos a incluir en el entregable:**
+
+- Al iniciar utilizando un efecto de montaje, debe llamar a un async mock, utilizando lo visto en la clase anterior con Promise, que en 2 segundos le devuelva un 1 ítem, y lo guarde en un estado propio.
+
+#### **PUNTO 2**
+
+**Consigna:**
+
+- Crea tu componente ItemDetail.js.
+
+**Aspectos a incluir en el entregable:**
+
+- ItemDetail.js, que debe mostrar la vista de detalle de un ítem incluyendo su descripción, una foto y el precio.
+
+**Material de referencia:**
+
+[Clase 6](https://docs.google.com/presentation/d/1MtcIrbRqpkkg5V7NEo8jIr7aHiRGac_RnpZey0iFzag/edit#slide=id.ga7f381865f_1_12): CONSUMIENDO API’S
+
+**Resumen:**
+
+- Se crea el componente ItemDetailContainer
+- Se crea el componente ItemDetail
+- Se importa el componente ItemDetail en ItemDetailContainer
+- Se simula la carga de un producto del mock utilizando promesas en el componente ItemDetailContainer.
+- Se crea el componente Spinner (opcional) y se usa en ItemDetailContainer y en ItemListContainer
+- Se mueve la logica de handleIconByCategory en Item a un custom hook en el fichero /hook y en el archivo useLogoCategory
+- Se implementa el useLogoCategory en Item, ItemDetail y Navbar

@@ -4,10 +4,18 @@ import Item from 'components/Item/Item';
 import {Box} from 'grommet';
 
 const ItemList = ({items}) => (
-	<Box direction="row" align="start" wrap="true" justify="between">
+	<Box
+		direction="row"
+		align="start"
+		wrap="true"
+		justify="between"
+	>
 		{
 			items.map((item, index) => (
-				<Item key={'itemlistmap1' + index} {...item} />
+				<Item
+					key={'itemlistmap1' + index}
+					{...item}
+				/>
 			))
 		}
 	</Box>
@@ -21,6 +29,7 @@ ItemList.propTypes = {
 		category: PropTypes.string.isRequired,
 		img: PropTypes.node.isRequired,
 		price: PropTypes.number.isRequired,
+		stock: PropTypes.number.isRequired,
 	}),
 };
 
