@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import {Box, Button, Text} from 'grommet';
 import {FormAdd, FormSubtract} from 'grommet-icons';
 
-const ItemCount = ({stock, initial = 1, onAdd}) => {
+const ItemCount = ({
+	stock,
+	initial = 1,
+	onAdd,
+}) => {
 	// Creo un estado usando el hook useState donde guardo el valor de mi contador y lo inicializo con el valor de 'initial'
 	const [count, setCount] = useState(initial);
 
@@ -14,9 +18,21 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
 	const handleRemoveItem = () => count > 0 && setCount(count - 1);
 
 	return (
-		<Box pad="20px" border width="100%">
-			<Box direction="row" align="center" justify="between" width="100%">
-				<Box round="full" overflow="hidden" background="light-1">
+		<Box
+			pad="20px"
+			border width="100%"
+		>
+			<Box
+				direction="row"
+				align="center"
+				justify="between"
+				width="100%"
+			>
+				<Box
+					round="full"
+					overflow="hidden"
+					background="light-1"
+				>
 					<Button
 						icon={<FormSubtract />}
 						hoverIndicator
@@ -25,7 +41,11 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
 					/>
 				</Box>
 				<Text>{count}</Text>
-				<Box round="full" overflow="hidden" background="light-1">
+				<Box
+					round="full"
+					overflow="hidden"
+					background="light-1"
+				>
 					<Button
 						icon={<FormAdd />}
 						hoverIndicator
@@ -34,9 +54,16 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
 					/>
 				</Box>
 			</Box>
-			<Box align="center" justify="center" width="100%">
+			<Box
+				align="center"
+				justify="center"
+				width="100%"
+			>
 				<Text>Stock disponible: {stock - count}</Text>
-				<Box align="center" pad="small">
+				<Box
+					align="center"
+					pad="small"
+				>
 					<Button
 						primary
 						label="Agregar al carrito"
