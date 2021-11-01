@@ -3,6 +3,7 @@ import orangeLogo from 'assets/images/orange-logo.png';
 import lemonlogo from 'assets/images/lemon-logo.png';
 import mandarineLogo from 'assets/images/mandarine-logo.png';
 import grapefruitLogo from 'assets/images/grapefruit-logo.png';
+import ctxCoin from 'assets/images/ctx-coin.png';
 
 export const LOGOS = {
 	logo: {
@@ -24,6 +25,10 @@ export const LOGOS = {
 	grapefruitLogo: {
 		src: grapefruitLogo,
 		alt: 'img logo pomelos',
+	},
+	ctxCoinLogo: {
+		src: ctxCoin,
+		alt: 'img CTX coin',
 	},
 };
 
