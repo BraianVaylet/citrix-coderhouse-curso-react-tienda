@@ -153,3 +153,4 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se importa el componente Item dentro del componente ItemList
 - Se importa el componente ItemList dentro del componente ItemListContainer
 - Se simula la carga de los productos del mock utilizando promesas en el componente ItemListContainer.
+- Se comprimien las imágenes usando [tinypng](https://tinypng.com/)
