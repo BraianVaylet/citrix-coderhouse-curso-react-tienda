@@ -3,22 +3,22 @@ import {LOGOS} from 'utils/images';
 export const items = [
 	{
 		label: 'Naranjas',
-		href: '#',
+		href: '/category/naranja',
 		icon: LOGOS.orangeLogo,
 	},
 	{
 		label: 'Pomelos',
-		href: '#',
+		href: '/category/pomelo',
 		icon: LOGOS.grapefruitLogo,
 	},
 	{
 		label: 'Limones',
-		href: '#',
+		href: '/category/limon',
 		icon: LOGOS.lemonlogo,
 	},
 	{
 		label: 'Mandarinas',
-		href: '#',
+		href: '/category/mandarina',
 		icon: LOGOS.mandarineLogo,
 	},
 ];

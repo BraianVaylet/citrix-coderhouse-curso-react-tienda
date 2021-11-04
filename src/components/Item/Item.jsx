@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Box, Image, Text} from 'grommet';
 import useLogoCategory from 'hooks/useLogoCategory';
 import styles from './ItemStyles.module.css';
+import {useNavigate} from 'react-router-dom';
 
 const Item = ({
 	id,
@@ -11,6 +12,7 @@ const Item = ({
 	img,
 	price,
 }) => {
+	const navigate = useNavigate();
 	const logo = useLogoCategory(category);
 	const logoToken = useLogoCategory('token');
 
@@ -19,6 +21,7 @@ const Item = ({
 			pad="small"
 			margin="small"
 			border data-id={id}
+			onClick={() => navigate(`/item/${id}`)}
 		>
 			<Box
 				direction="row"

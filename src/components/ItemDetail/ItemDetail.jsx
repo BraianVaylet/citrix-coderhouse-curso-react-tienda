@@ -1,11 +1,14 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Box, Image, Text} from 'grommet';
+import {FormPrevious} from 'grommet-icons';
 import useLogoCategory from 'hooks/useLogoCategory';
 import styles from './ItemDetailStyles.module.css';
 import ItemCount from 'components/ItemCount/ItemCount';
 
 const ItemDetail = ({id, title, description, category, img, price, stock}) => {
+	const navigate = useNavigate();
 	const logoCategory = useLogoCategory(category);
 	const logoToken = useLogoCategory('token');
 
@@ -14,11 +17,26 @@ const ItemDetail = ({id, title, description, category, img, price, stock}) => {
 			direction="row"
 			align="start"
 			justify="between"
-			pad="small"
+			pad="large"
 			margin="small"
 			width="100%"
-			border data-id={id}
+			data-id={id}
 		>
+			{/* back */}
+			<Box
+				direction="row"
+				align="start"
+				justify="between"
+			>
+				<FormPrevious color="brand" />
+				<Text
+					color="brand"
+					className={styles['link-back']}
+					onClick={() => navigate(-1)}
+				>
+					Volver
+				</Text>
+			</Box>
 			{/* img */}
 			<Box width="50%">
 				<Box
@@ -38,7 +56,7 @@ const ItemDetail = ({id, title, description, category, img, price, stock}) => {
 			{/* content */}
 			<Box
 				pad="large"
-				width="50%"
+				width="25%"
 			>
 				{/* title */}
 				<Box

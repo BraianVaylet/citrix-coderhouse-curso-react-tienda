@@ -4,8 +4,10 @@ import {items} from './Navbar.mock';
 import styles from './NavbarStyles.module.css';
 import CartWidget from 'components/CartWidget/CartWidget';
 import useLogoCategory from 'hooks/useLogoCategory';
+import {Link, useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
+	const navigate = useNavigate();
 	const logo = useLogoCategory('logo');
 	const logoToken = useLogoCategory('token');
 
@@ -15,6 +17,7 @@ const Navbar = () => {
 				direction="row"
 				align="center"
 				gap="small"
+				onClick={() => navigate('/')}
 			>
 				<Box
 					height="xxsmall"
@@ -36,8 +39,9 @@ const Navbar = () => {
 			<Nav direction="row">
 				{items && items.map((item, index) => (
 					<Anchor
+						as={Link}
 						key={'navbarmap1' + index}
-						href={item.href}
+						to={item.href}
 						label={
 							<Box
 								direction="row-responsive"

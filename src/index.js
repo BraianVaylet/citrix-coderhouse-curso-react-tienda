@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import {Grommet} from 'grommet';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
 import citrixTheme from 'utils/theme';
 import './index.css';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Grommet theme={citrixTheme}>
-			<App />
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
 		</Grommet>
 	</React.StrictMode>,
 	document.getElementById('root'),
