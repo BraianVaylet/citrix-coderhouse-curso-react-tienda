@@ -6,3 +6,8 @@
   font-weight:700;
   margin-left: 20px;
 }
+
+.link-back:hover {
+  cursor: pointer;
+  opacity: .9;
+}

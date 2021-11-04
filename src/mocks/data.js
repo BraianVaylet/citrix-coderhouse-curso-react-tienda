@@ -89,7 +89,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '7',
+		id: '9',
 		title: 'Mandarina Tango',
 		description: 'Esta es una mandarina tango',
 		category: 'mandarina',
@@ -98,7 +98,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '8',
+		id: '10',
 		title: 'Naranja Lisa',
 		description: 'Esta es una naranja lisa',
 		category: 'naranja',
@@ -107,7 +107,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '9',
+		id: '11',
 		title: 'Naranja de Ombligo',
 		description: 'Esta es una naranja ombligo',
 		category: 'naranja',
@@ -116,7 +116,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '10',
+		id: '12',
 		title: 'Naranja Sangre',
 		description: 'Esta es una naranja sangre',
 		category: 'naranja',
@@ -125,7 +125,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '11',
+		id: '13',
 		title: 'Pomelo Blanco',
 		description: 'Esto es un pomelo blanco',
 		category: 'pomelo',
@@ -134,7 +134,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '12',
+		id: '14',
 		title: 'Pomelo Chino',
 		description: 'Esto es un pomelo chino',
 		category: 'pomelo',
@@ -143,7 +143,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '13',
+		id: '15',
 		title: 'Pomelo Rosa',
 		description: 'Esto es un pomelo rosa',
 		category: 'pomelo',
@@ -152,7 +152,7 @@ export const ITEMS = [
 		stock: 10,
 	},
 	{
-		id: '14',
+		id: '16',
 		title: 'Pomelo Verde',
 		description: 'Esto es un pomelo verde',
 		category: 'pomelo',
