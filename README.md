@@ -199,7 +199,7 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 
 ---
 
-### [Desafío7: PRIMERA ENTREGA DEL PROYECTO FINAL](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-07)
+### [Desafío7: PRIMERA ENTREGA DEL PROYECTO FINAL](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-07-PrimeraEntregaProyectoFinal)
 
 **Consigna:**
 
