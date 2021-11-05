@@ -307,7 +307,7 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 
 **Material de referencia:**
 
-[Clase 9](https://docs.google.com/presentation/d/1FUJb7pgOXVnEOUwAWD-bsb6IzO-qGoVOqqHJP3GedsY/edit#slide=id.gb19f78b158_0_12): CONTEXT
+[Clase 10](https://docs.google.com/presentation/d/1FUJb7pgOXVnEOUwAWD-bsb6IzO-qGoVOqqHJP3GedsY/edit#slide=id.gb19f78b158_0_12): CONTEXT
 
 **Resumen:**
 
@@ -315,3 +315,37 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se inicializa el CartContextProvider en index.js
 - Se crea en el CartContext los siguientes métodos: addItem, removeItem, clear, isInCart y algunos extras.
 - Se implementa el addItems en el componente ItemDetail y se prueba usando un log por consola.
+
+---
+
+### [Desafío10: CartView](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-10)
+
+**Consigna:**
+
+- Expande tu componente Cart.js con el desglose de la compra, y actualiza tu CartWidget.js para hacerlo reactivo al contexto.
+
+**Aspectos a incluir en el entregable:**
+
+**`Cart.js`**
+
+- Debe mostrar el desglose de tu carrito y el precio total.
+- Debe estar agregada la ruta ‘cart’ al BrowserRouter.
+- Debe mostrar todos los ítems agregados agrupados.
+- Por cada tipo de ítem, incluye un control para eliminar ítems.
+- De no haber ítems muestra un mensaje, de manera condicional, diciendo que no hay ítems y un react-router Link o un botón para que pueda volver al Landing (ItemDetailContainer.js) para buscar y comprar algo.
+
+**`CartWidget.js`**
+
+- Ahora debe consumir el CartContext y mostrar en tiempo real (aparte del ícono) qué cantidad de ítems están agregados (2 camisas y 1 gorro equivaldrían a 3 items).
+- El cart widget no se debe mostrar más si no hay items en el carrito, aplicando la técnica que elijas (dismount, style, etc).
+- Cuando el estado interno de ItemDetail tenga la cantidad de ítems solicitados mostrar en su lugar un botón que diga “Terminar mi compra”
+
+**Material de referencia:**
+
+[Clase 11](https://docs.google.com/presentation/d/10kjHHO5dhujtcDb6VngDZSfnSrw0BOCgVZr5qrcUefk/edit#slide=id.g789064cc92_0_12): RENDERIZADO CONDICIONAL
+
+**Resumen:**
+
+- Se implementa el CartContext en el componente CartWidget para mostrar el total de items en tiempo real.
+- Se crea el componente ItemCart el cual muestra la info del item en el carrito junto a las acciones de eliminar 1 elemento del carrito como todos los de ese tipo.
+- Se crea el page component Cart donde se muestra los items dentro del CartContext junto a los botones que ejecutan las diferentes acciones.
