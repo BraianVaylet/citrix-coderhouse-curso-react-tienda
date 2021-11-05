@@ -64,7 +64,6 @@ const Navbar = () => {
 						} />
 				))}
 				<CartWidget />
-
 				<Box
 					align="center"
 					pad="xxsmall"
