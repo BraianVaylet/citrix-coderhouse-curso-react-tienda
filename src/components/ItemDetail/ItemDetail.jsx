@@ -10,13 +10,11 @@ import styles from './ItemDetailStyles.module.css';
 
 const ItemDetail = item => {
 	const {id, title, description, category, img, price, stock} = item;
-	const {addItem, cartItems} = useContext(CartContext);
+	const {addItem} = useContext(CartContext);
 	const navigate = useNavigate();
 	const [counter, setCounter] = useState(null);
 	const logoCategory = useLogoCategory(category);
 	const logoToken = useLogoCategory('token');
-
-	console.log('cartItems', cartItems);
 
 	// Agregar elementos al carrito
 	const handleOnAdd = count => {
@@ -51,7 +49,6 @@ const ItemDetail = item => {
 				align="start"
 				justify="between"
 				pad="large"
-				margin="small"
 				width="100%"
 				data-id={id}
 			>
@@ -71,10 +68,7 @@ const ItemDetail = item => {
 					</Box>
 				</Box>
 				{/* content */}
-				<Box
-					pad="large"
-					width="25%"
-				>
+				<Box width="25%">
 					{/* title */}
 					<Box
 						direction="row"

@@ -42,7 +42,7 @@ const ItemDetailContainer = () => {
 	};
 
 	return (
-		<Box>
+		<Box pad="large">
 			{item ? <ItemDetail {...item} /> : <SimpleSpinner />}
 		</Box>
 	);
