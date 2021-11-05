@@ -1,19 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Grommet} from 'grommet';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
+import {Grommet} from 'grommet';
+import reportWebVitals from './reportWebVitals';
 import citrixTheme from 'utils/theme';
+import {CartContextProvider} from 'context/CartContext';
+import App from './App';
 import './index.css';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Grommet theme={citrixTheme}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</Grommet>
+		{/* context */}
+		<CartContextProvider>
+			{/* ui */}
+			<Grommet theme={citrixTheme}>
+				{/* routes */}
+				<BrowserRouter>
+					{/* my app */}
+					<App />
+				</BrowserRouter>
+			</Grommet>
+		</CartContextProvider>
 	</React.StrictMode>,
 	document.getElementById('root'),
 );

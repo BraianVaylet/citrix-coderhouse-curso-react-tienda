@@ -281,3 +281,37 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se crea un estado count dentro del componente ItemDetail usando el hook useState donde se guarda el valor obtenido desde ItemCount
 - Se condiciona para mostrar el ItemCount o un boton que redirecciona al page component Cart si dependiendo del valor de count
 - Se crea un nuevo page component llamado Cart
+
+---
+
+### [Desafío9: CartContext](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-09)
+
+**Consigna:**
+
+- Implementa React Context para mantener el estado de compra del user, siguiendo los detalles del manual.
+
+**Aspectos a incluir en el entregable:**
+
+- Al clickear comprar en ItemDetail se debe guardar en el CartContext el producto y su cantidad en forma de objeto { name, price, quantity, etc. } dentro del array de productos agregados
+
+**Detalle importante:**
+
+- CartContext debe tener la lógica incorporada de no aceptar duplicados y mantener su consistencia.
+
+**Métodos recomendados:**
+
+- addItem(item, quantity) // agregar cierta cantidad de un ítem al carrito
+- removeItem(itemId) // Remover un item del cart por usando su id
+- clear() // Remover todos los items
+- isInCart: (id) => true|false
+
+**Material de referencia:**
+
+[Clase 9](https://docs.google.com/presentation/d/1FUJb7pgOXVnEOUwAWD-bsb6IzO-qGoVOqqHJP3GedsY/edit#slide=id.gb19f78b158_0_12): CONTEXT
+
+**Resumen:**
+
+- Se crea el fichero /context y dentro el archivo CartContext.js
+- Se inicializa el CartContextProvider en index.js
+- Se crea en el CartContext los siguientes métodos: addItem, removeItem, clear, isInCart y algunos extras.
+- Se implementa el addItems en el componente ItemDetail y se prueba usando un log por consola.
