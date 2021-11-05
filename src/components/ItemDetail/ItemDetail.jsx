@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Box, Image, Text} from 'grommet';
+import {Box, Button, Image, Text} from 'grommet';
 import {FormPrevious} from 'grommet-icons';
 import useLogoCategory from 'hooks/useLogoCategory';
 import styles from './ItemDetailStyles.module.css';
@@ -9,6 +9,7 @@ import ItemCount from 'components/ItemCount/ItemCount';
 
 const ItemDetail = ({id, title, description, category, img, price, stock}) => {
 	const navigate = useNavigate();
+	const [counter, setCounter] = useState(null);
 	const logoCategory = useLogoCategory(category);
 	const logoToken = useLogoCategory('token');
 
@@ -113,12 +114,28 @@ const ItemDetail = ({id, title, description, category, img, price, stock}) => {
 					</Text>
 				</Box>
 				{/* counter */}
-				<Box>
-					<ItemCount
-						stock={stock}
-						onAdd={value => console.log(`Se agregaron ${value} items 1 al carrito`)}
-					/>
-				</Box>
+				{
+					counter
+						? (
+							<Box
+								align="center"
+								pad="small"
+							>
+								<Button
+									primary
+									label="Ir al carrito"
+									onClick={() => navigate('/cart')}
+								/>
+							</Box>
+						) :	(
+							<Box>
+								<ItemCount
+									stock={stock}
+									onAdd={value => setCounter(value)}
+								/>
+							</Box>
+						)
+				}
 			</Box>
 		</Box>
 	);

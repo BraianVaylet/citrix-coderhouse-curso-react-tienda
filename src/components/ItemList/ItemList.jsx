@@ -8,7 +8,7 @@ const ItemList = ({items}) => (
 		direction="row"
 		align="start"
 		wrap="true"
-		justify="between"
+		justify="center"
 	>
 		{
 			items.map((item, index) => (

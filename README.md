@@ -257,3 +257,27 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se usa el hook useParams en el componente ItemDetailContainer y se crea la funcion handleFilterData() para filtrar los ítems del mock por id del item.
 - Se usa el hook useNavigate en el componente Navbar para navegar siempre a la Home
 - Se crea el componente 404 y se configura la ruta por defecto
+
+---
+
+### [Desafío8: Sincronizar Counter](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-08)
+
+**Consigna:**
+
+- Importa el ItemCount.js del desafío Nº 4 en el counter ItemDetail.js, y configura el evento de compra, siguiendo los detalles de manual.
+
+**Aspectos a incluir en el entregable:**
+
+- Debes lograr separar la responsabilidad del count, del detalle del ítem, y esperar los eventos de agregado emitidos por el ItemCount
+- Cuando ItemCount emita un evento onAdd almacenarás ese valor en un estado interno del ItemDetail para hacer desaparecer el ItemCount
+- El botón de terminar mi compra debe poder navegar a un componente vacío por el momento en la ruta ‘/cart’.
+
+**Material de referencia:**
+
+[Clase 9](https://docs.google.com/presentation/d/1dVy22YKjlS5HARCpmSYEtM7sHl-QerdEWNTGWisituY/edit#slide=id.ga7f3d42d5a_0_12): EVENTOS
+
+**Resumen:**
+
+- Se crea un estado count dentro del componente ItemDetail usando el hook useState donde se guarda el valor obtenido desde ItemCount
+- Se condiciona para mostrar el ItemCount o un boton que redirecciona al page component Cart si dependiendo del valor de count
+- Se crea un nuevo page component llamado Cart
