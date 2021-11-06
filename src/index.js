@@ -7,20 +7,23 @@ import citrixTheme from 'utils/theme';
 import {CartContextProvider} from 'context/CartContext';
 import App from './App';
 import './index.css';
+import {ProductContextProvider} from 'context/ProductContext';
 
 ReactDOM.render(
 	<React.StrictMode>
 		{/* context */}
-		<CartContextProvider>
-			{/* ui */}
-			<Grommet theme={citrixTheme}>
-				{/* routes */}
-				<BrowserRouter>
-					{/* my app */}
-					<App />
-				</BrowserRouter>
-			</Grommet>
-		</CartContextProvider>
+		<ProductContextProvider>
+			<CartContextProvider>
+				{/* ui */}
+				<Grommet theme={citrixTheme}>
+					{/* routes */}
+					<BrowserRouter>
+						{/* my app */}
+						<App />
+					</BrowserRouter>
+				</Grommet>
+			</CartContextProvider>
+		</ProductContextProvider>
 	</React.StrictMode>,
 	document.getElementById('root'),
 );
