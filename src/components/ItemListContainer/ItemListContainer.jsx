@@ -1,36 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Box, Text} from 'grommet';
+import {ProductContext} from 'context/ProductContext';
 import ItemList from 'components/ItemList/ItemList';
 import SimpleSpinner from 'components/Spinner/Spinner';
-import {ITEMS} from 'mocks/data';
+import {FirebaseClient} from 'firebase/client';
 
 const ItemListContainer = ({greeting}) => {
+	const {products, setProducts, load, setLoad} = useContext(ProductContext);
 	const {id: idCategory} = useParams();
-	const [items, setItems] = useState(null);
+	const firebase = new FirebaseClient();
 
-	useEffect(() => getItemsAsyncAwait(), [idCategory]);
+	useEffect(() => {
+		getProductsFromDb();
+	}, [idCategory]);
 
-	const getItems = () => new Promise((resolve, reject) => {
-		setTimeout(() => ITEMS
-			? resolve(ITEMS)
-			: reject(new Error('getItems Error'))
-		, 1000);
-	});
-
-	const getItemsAsyncAwait = async () => {
+	const getProductsFromDb = async () => {
 		try {
-			const products = await getItems();
-			setItems(handleFilterData(products));
+			setLoad(true);
+			const value = (idCategory)
+				? await firebase.getProductsByCategory(idCategory)
+				: await firebase.getProducts();
+			setProducts(value);
+			setLoad(false);
 		} catch (error) {
-			console.error('ERROR', '🤦‍♂️ Algo malio sal', error);
+			console.error('components/ItemListContainer/getProductsFromDb', error);
 		}
 	};
-
-	const handleFilterData = data => (idCategory && data)
-		? data.filter(item => item.category === idCategory)
-		: data;
 
 	return (
 		<>
@@ -42,7 +39,7 @@ const ItemListContainer = ({greeting}) => {
 				{greeting}
 			</Text>
 			<Box pad="large">
-				{items ? <ItemList items={items}/> : <SimpleSpinner />}
+				{load ? <SimpleSpinner /> : <ItemList items={products}/>}
 			</Box>
 		</>
 	);

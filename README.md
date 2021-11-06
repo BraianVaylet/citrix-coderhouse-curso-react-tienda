@@ -10,7 +10,8 @@
 
 ### **LIBRERÍAS**
 
-- [react-router](https://reactrouter.com/resources): Librería para el ruteo de la SPA
+- [react-router](https://reactrouter.com/resources): Librería para el ruteo de la SPA.
+- [firebase](https://firebase.google.com/docs/web/setup?authuser=0): Servicio web que nos proporciona un backend en la nube con una fuente de datos NoSQL.
 
 ### **LIBRERÍAS (opcionales)**
 
@@ -349,3 +350,31 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se implementa el CartContext en el componente CartWidget para mostrar el total de items en tiempo real.
 - Se crea el componente ItemCart el cual muestra la info del item en el carrito junto a las acciones de eliminar 1 elemento del carrito como todos los de ese tipo.
 - Se crea el page component Cart donde se muestra los items dentro del CartContext junto a los botones que ejecutan las diferentes acciones.
+
+---
+
+### [Desafío11: Item Collection](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-10)
+
+**Consigna:**
+
+- Conecta tu nueva ItemCollection de Google Firestore a tu ItemListContainer y ItemDetailContainer
+
+**Aspectos a incluir en el entregable:**
+
+- Conecta tu colección de firestore con el listado de ítems y con el detalle de ítem.
+- Elimina los async mocks (promises) y reemplazalos por los llamados de Firestore.
+- Si navegas a /item/:id, debe ocurrir una consulta de (1) documento. 
+- Si navegas al catálogo, debes consultar (N) documentos con un query filtrado, implementando la lógica de categorías y obteniendo el id de categoría del parámetro de react-router :categoryId.
+
+**Material de referencia:**
+
+[Clase 12](https://docs.google.com/presentation/d/1GOESD2gxlhp0GMzHpW9Cc7uDaB08akqaKh-iEcwlrU4/edit#slide=id.gb19a8efb71_1_12): FIREBASE I
+
+**Resumen:**
+
+- Se crea un proyecto en firebase
+- Se instala la libreria de [firebase](https://firebase.google.com/docs/web/setup?authuser=0) en el proyecto
+- Se crea el fichero /firebase y el archivo client.js donde se importa firebase y se inicializa
+- Se carga el mock como una coleccion de firebase llamada products
+- Se creo un nuevo contexto para los productos (ProductContext.js)
+- Se eliminaron las promesas y los fetchs que simulaban la carga de datos desde el mock y se implementan los metodos de firebase en los componentes ItemListContainer y tambien en ItemDetailContainer.
