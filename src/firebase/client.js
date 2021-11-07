@@ -34,7 +34,10 @@ export class FirebaseClient {
 			const ref = doc(db, 'products', id);
 			const docSnapshot = await getDoc(ref);
 			if (docSnapshot.exists()) {
-				return docSnapshot.data();
+				return {
+					id: docSnapshot.id,
+					...docSnapshot.data(),
+				};
 			}
 		} catch (error) {
 			console.error('getProducts', error);
