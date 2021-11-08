@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import {getFirestore, collection, getDocs, getDoc, doc, query, where} from 'firebase/firestore/lite';
+import {getFirestore, collection, getDocs, getDoc, doc, query, where, addDoc, Timestamp, updateDoc} from 'firebase/firestore/lite';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -34,8 +34,13 @@ export class FirebaseClient {
 			const ref = doc(db, 'products', id);
 			const docSnapshot = await getDoc(ref);
 			if (docSnapshot.exists()) {
-				return docSnapshot.data();
+				return {
+					id: docSnapshot.id,
+					...docSnapshot.data(),
+				};
 			}
+
+			return null;
 		} catch (error) {
 			console.error('getProducts', error);
 		}
@@ -51,6 +56,46 @@ export class FirebaseClient {
 			}));
 		} catch (error) {
 			console.error('getProducts', error);
+		}
+	}
+
+	async updateProductStockById(id, count) {
+		const ref = doc(db, 'products', id);
+		const docSnapshot = await getDoc(ref);
+		if (docSnapshot.exists()) {
+			const {stock} = docSnapshot.data();
+			// Defino mi nuevo stock
+			const newStock = stock === 0 || stock - count < 0 ? 0 : stock - count;
+			// Actualizo el valor del stock
+			await updateDoc(ref, {
+				stock: newStock,
+			});
+			return true;
+		}
+
+		return null;
+	}
+
+	async addOrder(items, user, price, total) {
+		try {
+			// Mapeo mi nueva orden
+			const newOrder = {
+				...user,
+				items,
+				date: Timestamp.now().toDate(),
+				price,
+				total,
+			};
+			// Actualizo el stock de los items
+			items.forEach(async element => {
+				await this.updateProductStockById(element.item.id, element.count);
+			});
+			// Genero nueva orden
+			const docRef = await addDoc(collection(db, 'orders'), newOrder);
+			// Retorno el id de la nueva orden
+			return docRef.id;
+		} catch (error) {
+			console.error('addOrder', error);
 		}
 	}
 }
