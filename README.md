@@ -352,8 +352,7 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se crea el page component Cart donde se muestra los items dentro del CartContext junto a los botones que ejecutan las diferentes acciones.
 
 ---
-
-### [Desafío11: Item Collection](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-10)
+### [Desafío11: Item Collection](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-11)
 
 **Consigna:**
 
@@ -363,7 +362,7 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 
 - Conecta tu colección de firestore con el listado de ítems y con el detalle de ítem.
 - Elimina los async mocks (promises) y reemplazalos por los llamados de Firestore.
-- Si navegas a /item/:id, debe ocurrir una consulta de (1) documento. 
+- Si navegas a /item/:id, debe ocurrir una consulta de (1) documento.
 - Si navegas al catálogo, debes consultar (N) documentos con un query filtrado, implementando la lógica de categorías y obteniendo el id de categoría del parámetro de react-router :categoryId.
 
 **Material de referencia:**
@@ -378,3 +377,29 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se carga el mock como una coleccion de firebase llamada products
 - Se creo un nuevo contexto para los productos (ProductContext.js)
 - Se eliminaron las promesas y los fetchs que simulaban la carga de datos desde el mock y se implementan los metodos de firebase en los componentes ItemListContainer y tambien en ItemDetailContainer.
+
+---
+
+### [Desafío12: Item Collection II](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Desafio-12)
+
+**Consigna:**
+
+- Crea tu colección de órdenes.
+
+**Aspectos a incluir en el entregable:**
+
+- Utiliza las operaciones de inserción para insertar tu orden en la colección y dale al user su id de orden auto-generada
+- Crea los mappings para poder grabar un objeto del formato { buyer: { name, phone, email }, items: [{ id, title, price }], date, total  }
+- Pista: Puedes controlar los stocks con multi-gets utilizando los itemId de tu cart.
+
+**Material de referencia:**
+
+[Clase 13](https://docs.google.com/presentation/d/13PpwBwMTbmLPPRKnC9jB9K3241_t8_tY1D6XJ4hZQTY/edit#slide=id.g78879160c0_0_12): FIREBASE II
+
+**Resumen:**
+
+- Se crean nuevos metodos en firebase/client.js para una nueva orden y para actualizar el stock de los productos.
+- Se crea un nuevo page component para la ThankYou page.
+- Se crea un simple formulario en el componente CartContainer.
+- Se crea una nueva orden luego de completar el form con los productos agregados al carrito y se redirecciona a la ThankYou page donde se muestra el numero de la orden.
+- Se actualiza el stock de los productos antes de generar una nueva orden.
