@@ -5,3 +5,8 @@
 .item-title {
   font-weight:700;
 }
+
+.card:hover {
+  opacity: .9;
+  cursor: pointer;
+}

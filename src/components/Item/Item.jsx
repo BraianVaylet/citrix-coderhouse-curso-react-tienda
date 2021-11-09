@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Box, Image, Text} from 'grommet';
+import {Box, Card, Image, Text} from 'grommet';
 import useLogoCategory from 'hooks/useLogoCategory';
 import styles from './ItemStyles.module.css';
 import {useNavigate} from 'react-router-dom';
@@ -17,11 +17,12 @@ const Item = ({
 	const logoToken = useLogoCategory('token');
 
 	return (
-		<Box
+		<Card
 			pad="small"
 			margin="small"
-			border data-id={id}
+			data-id={id}
 			onClick={() => navigate(`/item/${id}`)}
+			className={styles.card}
 		>
 			<Box
 				direction="row"
@@ -73,7 +74,7 @@ const Item = ({
 					/>
 				</Box>
 			</Box>
-		</Box>
+		</Card>
 	);
 };
 

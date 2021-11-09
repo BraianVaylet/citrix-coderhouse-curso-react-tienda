@@ -60,20 +60,24 @@ export class FirebaseClient {
 	}
 
 	async updateProductStockById(id, count) {
-		const ref = doc(db, 'products', id);
-		const docSnapshot = await getDoc(ref);
-		if (docSnapshot.exists()) {
-			const {stock} = docSnapshot.data();
-			// Defino mi nuevo stock
-			const newStock = stock === 0 || stock - count < 0 ? 0 : stock - count;
-			// Actualizo el valor del stock
-			await updateDoc(ref, {
-				stock: newStock,
-			});
-			return true;
-		}
+		try {
+			const ref = doc(db, 'products', id);
+			const docSnapshot = await getDoc(ref);
+			if (docSnapshot.exists()) {
+				const {stock} = docSnapshot.data();
+				// Defino mi nuevo stock
+				const newStock = stock === 0 || stock - count < 0 ? 0 : stock - count;
+				// Actualizo el valor del stock
+				await updateDoc(ref, {
+					stock: newStock,
+				});
+				return true;
+			}
 
-		return null;
+			return null;
+		} catch (error) {
+			console.error('updateProductStockById', error);
+		}
 	}
 
 	async addOrder(items, user, price, total) {
@@ -96,6 +100,28 @@ export class FirebaseClient {
 			return docRef.id;
 		} catch (error) {
 			console.error('addOrder', error);
+		}
+	}
+
+	// Para actualizar el stock de todos los items a 20
+	async updateProductsStock() {
+		try {
+			const items = await this.getProducts();
+			items.forEach(async item => {
+				const ref = doc(db, 'products', item.id);
+				const docSnapshot = await getDoc(ref);
+				if (docSnapshot.exists()) {
+					// Actualizo el valor del stock
+					await updateDoc(ref, {
+						stock: 20,
+					});
+					return true;
+				}
+
+				return null;
+			});
+		} catch (error) {
+			console.error('updateProductsStock', error);
 		}
 	}
 }

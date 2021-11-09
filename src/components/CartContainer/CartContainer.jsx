@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-import {Anchor, Box, Button, Form, FormField, Image, Text, TextInput} from 'grommet';
+import {Anchor, Box, Button, Card, Form, FormField, Image, Text, TextInput} from 'grommet';
 import {CartContext} from 'context/CartContext';
 import useLogoCategory from 'hooks/useLogoCategory';
 import ItemCart from 'components/ItemCart/ItemCart';
@@ -61,12 +61,11 @@ const CartContainer = () => {
 								<ItemCart key={'cartpagemap' + index} {...item} />
 							))}
 						</Box>
-						<Box
+						<Card
 							width="25%"
 							align="center"
 							justify="center"
 							pad="large"
-							border
 						>
 							{/* info */}
 							<Box
@@ -150,7 +149,7 @@ const CartContainer = () => {
 									/>
 								}
 							</Box>
-						</Box>
+						</Card>
 					</Box>
 				)}
 		</Box>

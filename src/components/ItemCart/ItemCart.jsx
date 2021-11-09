@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
-import {Anchor, Box, Button, Image, Text} from 'grommet';
+import {Anchor, Box, Button, Card, Image, Text} from 'grommet';
 import useLogoCategory from 'hooks/useLogoCategory';
 import styles from './ItemCartStyles.module.css';
 import {Link, useNavigate} from 'react-router-dom';
@@ -14,11 +14,10 @@ const ItemCart = product => {
 	const logoToken = useLogoCategory('token');
 
 	return (
-		<Box
+		<Card
 			direction="row"
 			pad="small"
 			margin="small"
-			border
 			justify="between"
 			align="center"
 		>
@@ -111,7 +110,7 @@ const ItemCart = product => {
 					label={<Text>Quitar todos</Text>}
 				/>
 			</Box>
-		</Box>
+		</Card>
 	);
 };
 

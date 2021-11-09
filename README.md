@@ -403,3 +403,14 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se crea un simple formulario en el componente CartContainer.
 - Se crea una nueva orden luego de completar el form con los productos agregados al carrito y se redirecciona a la ThankYou page donde se muestra el numero de la orden.
 - Se actualiza el stock de los productos antes de generar una nueva orden.
+
+---
+
+### [Mejoras1](https://github.com/BraianVaylet/coderhouse-curso-react-tienda/tree/feature/Mejoras-01)
+
+**Resumen:**
+
+- Se agrega un componente Carousel para mostrar los banners
+- Se crea el componente Footer y se agrega al componente Layout
+- Se crea una funcionalidad extra en firebase/client.js para resetear el valor del stock de los productos a 20
+- Refactor de componentes y estilos

@@ -12,8 +12,9 @@ const Navbar = () => {
 	const logoToken = useLogoCategory('token');
 
 	return (
-		<Header pad="medium">
+		<Header width="100%">
 			<Box
+				pad="medium"
 				direction="row"
 				align="center"
 				gap="small"
