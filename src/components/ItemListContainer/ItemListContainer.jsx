@@ -38,7 +38,7 @@ const ItemListContainer = ({greeting}) => {
 			>
 				{greeting}
 			</Text>
-			<Box pad="large">
+			<Box pad="large" width="100%">
 				{load ? <SimpleSpinner /> : <ItemList items={products}/>}
 			</Box>
 		</>

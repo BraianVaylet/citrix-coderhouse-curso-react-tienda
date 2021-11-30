@@ -2,11 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from 'components/Navbar/Navbar';
 import {Box} from 'grommet';
+import CustomFooter from 'components/Footer/Footer';
 
 const Layout = ({children}) => (
-	<Box className="App">
+	<Box
+		direction="column"
+		align="start"
+		justify="center"
+		width="100%"
+	>
 		<Navbar />
-		{children}
+		<Box className="App">
+			{children}
+		</Box>
+		<CustomFooter />
 	</Box>
 );
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Box, Image, Text} from 'grommet';
+import {Box, Card, Image, Text} from 'grommet';
 import useLogoCategory from 'hooks/useLogoCategory';
 import styles from './ItemStyles.module.css';
 import {useNavigate} from 'react-router-dom';
@@ -11,21 +11,25 @@ const Item = ({
 	category,
 	img,
 	price,
+	stock,
 }) => {
 	const navigate = useNavigate();
 	const logo = useLogoCategory(category);
 	const logoToken = useLogoCategory('token');
 
 	return (
-		<Box
+		<Card
 			pad="small"
 			margin="small"
-			border data-id={id}
-			onClick={() => navigate(`/item/${id}`)}
+			data-id={id}
+			onClick={() => stock > 0 && navigate(`/item/${id}`)}
+			className={styles.card}
 		>
 			<Box
 				direction="row"
 				align="center"
+				justify="between"
+				width="100%"
 			>
 				<Box
 					height="25px"
@@ -35,15 +39,17 @@ const Item = ({
 						fit="cover"
 						src={logo.src}
 						alt={logo.alt}
+						className={`${stock === 0 && styles['item-no-stock']}`}
 					/>
 				</Box>
+				{stock === 0 && <Text>Sin Stock</Text>}
 			</Box>
 			<Box
 				height="small"
 				width="small"
 			>
 				<Image
-					className={styles['item-image']}
+					className={`${styles['item-image']} ${stock === 0 && styles['item-no-stock']}`}
 					src={img}
 					alt={title}
 					fit="contain"
@@ -70,10 +76,11 @@ const Item = ({
 						fit="cover"
 						src={logoToken.src}
 						alt={logoToken.alt}
+						className={`${stock === 0 && styles['item-no-stock']}`}
 					/>
 				</Box>
 			</Box>
-		</Box>
+		</Card>
 	);
 };
 
@@ -83,6 +90,7 @@ Item.propTypes = {
 	category: PropTypes.string.isRequired,
 	img: PropTypes.node.isRequired,
 	price: PropTypes.number.isRequired,
+	stock: PropTypes.number.isRequired,
 };
 
 export default Item;

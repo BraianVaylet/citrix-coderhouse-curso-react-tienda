@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  padding: 0 5vw;
+  min-height: 90vh !important;
+  width: 100% !important;
+}
