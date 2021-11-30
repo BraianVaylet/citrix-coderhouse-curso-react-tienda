@@ -1,5 +1,9 @@
 # Proyecto final del curso de React de Coderhouse
 
+> Este un simple ejemplo de una tienda realizada siguiendo los desafíos planteados por Coderhouse, la idea del repo es que tengan un ejemplo de lo que van a poder hacer al terminar el curso, también para que les sirva como consulta en los momentos en que se sientan perdidos o trabados con los desafíos. **RECUERDEN POR SU BIEN NO ENTRAR AL REPO SALVO QUE SEA NECESARIO. NO COPIEN ESTO MISMO EN SUS PROYECTOS. INVESTIGAR Y CONSULTAR SON HERRAMIENTAS FUNDAMENTALES DE CUALQUIER BUEN DESARROLLADOR Y ESTAS NO SE INCLUYEN EN EL CURSO, QUEDA EN USTEDES APRENDER A RESOLVER LOS PROBLEMAS CON LOS QUE SE ENCUENTREN AL ESTAR PROGRAMANDO**.
+
+> El proyecto fue realizado de una forma simple, apoyándome en algunas librerías para facilitar el desarrollo y dejando de lado el diseño y el responsive del proyecto. Solo me dediqué al desarrollo funcional de los desafíos. ACLARACIÓN: No es necesario usar todas las librerías que utilice, presten atención a cuales son las obligatorias y necesarias y cuales fueron opcionales.
+
 ## Crear una tienda usando React.js
 
 ### **GIT: Branch o Ramas**
