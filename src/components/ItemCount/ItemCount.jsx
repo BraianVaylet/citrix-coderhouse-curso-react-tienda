@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Box, Button, Text} from 'grommet';
+import {Box, Button, Card, Text} from 'grommet';
 import {FormAdd, FormSubtract} from 'grommet-icons';
 
 const ItemCount = ({
@@ -18,9 +18,9 @@ const ItemCount = ({
 	const handleRemoveItem = () => count > 0 && setCount(count - 1);
 
 	return (
-		<Box
+		<Card
 			pad="20px"
-			border width="100%"
+			width="100%"
 		>
 			<Box
 				direction="row"
@@ -72,7 +72,7 @@ const ItemCount = ({
 					/>
 				</Box>
 			</Box>
-		</Box>
+		</Card>
 	);
 };
 

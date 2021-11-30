@@ -1,7 +1,17 @@
 .item-image {
-  background-color: white !important;
+  background-color: white !important;  
+}
+
+.item-no-stock {
+  filter: grayscale(100%);
+  cursor: not-allowed;
 }
 
 .item-title {
   font-weight:700;
+}
+
+.card:hover {
+  opacity: .9;
+  cursor: pointer;
 }
