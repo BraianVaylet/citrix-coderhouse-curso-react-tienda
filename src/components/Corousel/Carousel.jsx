@@ -9,7 +9,10 @@ const CarouselBanner = () => (
 		overflow="hidden"
 		margin={{left: 'none', right: 'none', top: 'large', bottom: 'large'}}
 	>
-		<Carousel fill>
+		<Carousel
+			fill
+			play={8000}
+		>
 			<Image
 				fit="cover"
 				src={IMAGES.banner1.src}

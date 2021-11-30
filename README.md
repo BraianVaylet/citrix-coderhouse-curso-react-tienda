@@ -413,4 +413,5 @@ Como sabes, todavía no tenemos nuestro detalle de ítem, y este desarrollo es p
 - Se agrega un componente Carousel para mostrar los banners
 - Se crea el componente Footer y se agrega al componente Layout
 - Se crea una funcionalidad extra en firebase/client.js para resetear el valor del stock de los productos a 20
-- Refactor de componentes y estilos
+- Refactor de componentes y estilos.
+- Se crea un ejemplo de autentificacion con firebase y Github.

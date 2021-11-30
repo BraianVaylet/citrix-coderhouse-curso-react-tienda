@@ -1,5 +1,8 @@
 import {initializeApp} from 'firebase/app';
 import {getFirestore, collection, getDocs, getDoc, doc, query, where, addDoc, Timestamp, updateDoc} from 'firebase/firestore/lite';
+import {getAuth, signInWithPopup, GithubAuthProvider, onAuthStateChanged, signOut} from 'firebase/auth';
+
+const provider = new GithubAuthProvider();
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -123,5 +126,54 @@ export class FirebaseClient {
 		} catch (error) {
 			console.error('updateProductsStock', error);
 		}
+	}
+
+	async onAuthStateChangedClient(onChange) {
+		const auth = getAuth();
+		await onAuthStateChanged(auth, user => {
+			if (user) {
+				onChange(user);
+				return user;
+			}
+
+			onChange(null);
+			return null;
+		});
+	}
+
+	async onAuthSignOut() {
+		const auth = getAuth();
+		await signOut(auth).then(user => {
+			console.log('client:user', user);
+		})
+			.catch(error => {
+				console.error('onAuthSignOut', error);
+			});
+	}
+
+	async loginWithGithub() {
+		const auth = getAuth();
+		await signInWithPopup(auth, provider)
+			.then(result => {
+				// This gives you a GitHub Access Token. You can use it to access the GitHub API.
+				const credential = GithubAuthProvider.credentialFromResult(result);
+				const token = credential.accessToken;
+				// The signed-in user info.
+				const {user} = result;
+				return {token, user};
+			}).catch(error => {
+				// Handle Errors here.
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				// The email of the user's account used.
+				const {email} = error;
+				// The AuthCredential type that was used.
+				const credential = GithubAuthProvider.credentialFromError(error);
+				console.error('loginWithGithub', error);
+				console.error('errorCode', errorCode);
+				console.error('errorMessage', errorMessage);
+				console.error('email', email);
+				console.error('credential', credential);
+			});
 	}
 }

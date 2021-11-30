@@ -25,29 +25,42 @@ const CustomFooter = () => {
 			width="100%"
 		>
 			<Text>Copyright ©2021 - [Tutor] Braian D. Vaylet </Text>
-			<Button
-				primary
-				color="dark-1"
-				onClick={() => updateStock()}
-				label={
-					<Box
-						align="center"
-						justify="center"
-						direction="row"
-					>
-						<PowerReset
-							size="medium"
-							color="white"
-						/>
-						<Text
-							color="white"
-							margin={{left: 'small', right: 'none', top: 'none', bottom: 'none'}}
+			<Box
+				align="center"
+				justify="start"
+				direction="row"
+			>
+				<Button
+					primary
+					color="dark-1"
+					onClick={() => updateStock()}
+					label={
+						<Box
+							align="center"
+							justify="center"
+							direction="row"
 						>
+							<PowerReset
+								size="medium"
+								color="white"
+							/>
+							<Text
+								color="white"
+								margin={{left: 'small', right: 'none', top: 'none', bottom: 'none'}}
+							>
 							Restart Stock
-						</Text>
-					</Box>
-				}
-			/>
+							</Text>
+						</Box>
+					}
+				/>
+				<Button
+					primary
+					color="dark-1"
+					margin={{left: 'small', right: 'none', top: 'none', bottom: 'none'}}
+					onClick={() => firebase.onAuthSignOut()}
+					label={<Text color="white">Logout</Text>}
+				/>
+			</Box>
 		</Footer>
 	);
 };

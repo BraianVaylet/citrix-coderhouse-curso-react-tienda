@@ -11,6 +11,7 @@ const Item = ({
 	category,
 	img,
 	price,
+	stock,
 }) => {
 	const navigate = useNavigate();
 	const logo = useLogoCategory(category);
@@ -21,12 +22,14 @@ const Item = ({
 			pad="small"
 			margin="small"
 			data-id={id}
-			onClick={() => navigate(`/item/${id}`)}
+			onClick={() => stock > 0 && navigate(`/item/${id}`)}
 			className={styles.card}
 		>
 			<Box
 				direction="row"
 				align="center"
+				justify="between"
+				width="100%"
 			>
 				<Box
 					height="25px"
@@ -36,15 +39,17 @@ const Item = ({
 						fit="cover"
 						src={logo.src}
 						alt={logo.alt}
+						className={`${stock === 0 && styles['item-no-stock']}`}
 					/>
 				</Box>
+				{stock === 0 && <Text>Sin Stock</Text>}
 			</Box>
 			<Box
 				height="small"
 				width="small"
 			>
 				<Image
-					className={styles['item-image']}
+					className={`${styles['item-image']} ${stock === 0 && styles['item-no-stock']}`}
 					src={img}
 					alt={title}
 					fit="contain"
@@ -71,6 +76,7 @@ const Item = ({
 						fit="cover"
 						src={logoToken.src}
 						alt={logoToken.alt}
+						className={`${stock === 0 && styles['item-no-stock']}`}
 					/>
 				</Box>
 			</Box>
@@ -84,6 +90,7 @@ Item.propTypes = {
 	category: PropTypes.string.isRequired,
 	img: PropTypes.node.isRequired,
 	price: PropTypes.number.isRequired,
+	stock: PropTypes.number.isRequired,
 };
 
 export default Item;
