@@ -6,9 +6,11 @@
 
 ## Crear una tienda usando React.js
 
+DEMO: [citrix-store](https://citrix-coderhouse-store.vercel.app/)
+
 ### **GIT: Branch o Ramas**
 
-- El proyecto cuenta con una branch **master** donde se encuentra la versión productiva de la tienda y esta deployada en [vercel](https://vercel.com/) baja esta [url](https://citrix-coderhouse-store-lirrgy2az-braianvaylet.vercel.app/)
+- El proyecto cuenta con una branch **master** donde se encuentra la versión productiva de la tienda y esta deployada en [vercel](https://vercel.com/).
 - El proyecto cuenta con una branch **dev** donde se encuentran los últimos cambios realizados en el proyecto.
 - El proyecto cuenta con una branch por cada desafío realizado que cuenta con el código necesario para cumplir con los requisitos del mismo.
 
