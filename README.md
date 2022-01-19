@@ -2,7 +2,7 @@
    <img align="center" width="100" src="https://raw.githubusercontent.com/BraianVaylet/citrix-coderhouse-curso-react-tienda/master/src/assets/images/citric-logo.png" />   
 </p>
 
-# Citrix 🍊
+# 🍊 Citrix 
 
 ## Proyecto final del curso de React de Coderhouse
 
