@@ -4,7 +4,7 @@
 
 # 🍊 Citrix 
 
-## Demo [AQUI](https://citrix-coderhouse-store.vercel.app/)
+### **[VER DEMO](https://citrix-coderhouse-store.vercel.app/)**
 
 ## Proyecto final del curso de React de Coderhouse
 
