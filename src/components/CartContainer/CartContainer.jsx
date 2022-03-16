@@ -50,19 +50,16 @@ const CartContainer = () => {
 					</Box>
 				) : (
 					<Box
-						direction="row"
-						align="start"
-						justify="between"
+						direction="column"
+						align="center"
+						justify="flex-start"
 					>
-						<Box
-							width="50%"
-						>
+						<Box>
 							{cartItems && cartItems.map((item, index) => (
 								<ItemCart key={'cartpagemap' + index} {...item} />
 							))}
 						</Box>
 						<Card
-							width="25%"
 							align="center"
 							justify="center"
 							pad="large"
